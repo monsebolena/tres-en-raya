@@ -1,0 +1,159 @@
+/* Fondo vibrante y ambiente moderno */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #7bf0ff, #8ba6ff); /* Fondo degradado en tonos cálidos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    flex-direction: column;
+    overflow: hidden; /* Evita barras de desplazamiento */
+    background-attachment: fixed;
+  }
+  
+  /* Contenedor principal con fondo borroso y sombra */
+  .container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3); /* Fondo semi-transparente */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px); /* Efecto de difuminado en el fondo */
+    animation: slideUp 1s ease-out; /* Efecto de deslizamiento */
+  }
+  
+  /* Animación para el contenedor */
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Sombra de texto para destacar */
+    animation: pulse 1.5s ease-in-out infinite; /* Efecto de pulso en el título */
+  }
+  
+  /* Animación de pulso para el título */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Estilos del tablero */
+  .tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 130px);
+    grid-template-rows: repeat(3, 130px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* Celdas del juego con efectos interactivos */
+  .celda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+    background-color: #fff;
+    border-radius: 15px;
+    font-size: 3.5em;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .celda:hover {
+    background-color: #7bf0ff;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra intensa al hacer hover */
+  }
+  
+  .celda:active {
+    transform: scale(0.95);
+  }
+  
+  /* Efectos visuales de las marcas X y O */
+  .celda.X {
+    color: #111111; /* Rojo brillante para X */
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5); /* Sombra para X */
+  }
+  
+  .celda.O {
+    color: #f7fcfb; /* Verde suave para O */
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5); /* Sombra para O */
+  }
+  
+  /* Efectos para el mensaje de ganador */
+  .winner {
+    font-size: 1.8em;
+    color: #fff;
+    margin-top: 30px;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out; /* Efecto de desvanecimiento */
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .winner:before {
+    content: "¡Resultado! ";
+    font-size: 1.2em;
+    color: #0114bb; /* Color dorado para el prefijo */
+  }
+  
+  /* Botón de reinicio con estilo atractivo */
+  button {
+    background-color: #48c9b0;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.5em;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #015ce6;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Efecto de animación para el botón */
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(17, 91, 230, 0.8);
+  }
+  /* Celdas con color gris claro después de marcar */
+.celda.marcada {
+    background-color: #83d8ff; /* Gris claro para las celdas marcadas */
+    cursor: not-allowed; /* Cambiar el cursor para indicar que no se puede hacer clic */
+    box-shadow: none; /* Eliminar la sombra */
+  }
+  
+  /* Mantener los efectos de hover y escala para celdas no marcadas */
+  .celda:not(.marcada):hover {
+    background-color: #015ce6;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  

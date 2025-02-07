@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en Raya</title>
+    <!-- Conexión con el archivo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tres en Raya</h1>
+        <div class="tablero">
+            <div class="celda" id="cell0" onclick="makeMove(0)"></div>
+            <div class="celda" id="cell1" onclick="makeMove(1)"></div>
+            <div class="celda" id="cell2" onclick="makeMove(2)"></div>
+            <div class="celda" id="cell3" onclick="makeMove(3)"></div>
+            <div class="celda" id="cell4" onclick="makeMove(4)"></div>
+            <div class="celda" id="cell5" onclick="makeMove(5)"></div>
+            <div class="celda" id="cell6" onclick="makeMove(6)"></div>
+            <div class="celda" id="cell7" onclick="makeMove(7)"></div>
+            <div class="celda" id="cell8" onclick="makeMove(8)"></div>
+        </div>
+        <div class="winner" id="winnerMessage"></div>
+        <button onclick="resetGame()">Reiniciar Juego</button>
+    </div>
+
+    <!-- Conexión con el archivo JavaScript -->
+    <script src="js/java.js"></script>
+</body>
+</html>
